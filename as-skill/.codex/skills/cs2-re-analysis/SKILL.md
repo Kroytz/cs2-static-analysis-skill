@@ -116,7 +116,10 @@ Inspect only the relevant schema/source files needed for the current scope.
 - Skip low-value temporaries or symbols whose renamed form does not improve analysis.
 - Change variable, argument, return, pointer, array, struct, enum, and function-pointer types when existing types are misleading.
 - Prioritize schema classes, entity pointers, handles, vtables, CUtl-style containers, arrays, resource handles, panel pointers, callbacks, jobs, and interfaces.
-- Never convert number bases manually. Use the `int_convert` MCP tool for every address, RVA, VA, offset, decimal, hexadecimal, binary, or other base conversion.
+- Never convert number bases manually.
+- When using IDA Pro MCP, use the `int_convert` MCP tool for every address, RVA, VA, offset, decimal, hexadecimal, binary, or other base conversion.
+- When using Ghidra MCP, first look for an available MCP-provided conversion method and use it if present.
+- If no reliable MCP conversion method is available for the active Ghidra setup, do not perform base conversion; keep the original numeric form and state that conversion was not performed.
 - Do not claim a root cause unless supported by backend evidence, crash context, matching schema data, matching source data, or deterministic scripts that model recovered logic.
 - Do not patch binaries, write hooks, or present a fix as proven unless the root cause is evidence-backed.
 - Do not run broad brute force, random search, or speculative scripts.
@@ -184,7 +187,7 @@ Naming: rename the thunk to `<Class>__StateChanged_<fieldname>` only when the ow
 Workflow:
 
 1. Collect crash context: module, image base, crash address, exception code, crashing instruction, registers, thread, call stack, and logs.
-2. Use `int_convert` for any required VA/RVA/offset/base conversion.
+2. Use the active-backend conversion rule for any required VA/RVA/offset/base conversion.
 3. Locate the crashing function and basic block in the active backend.
 4. Inspect decompiler output near the crash.
 5. Inspect disassembly/listing when needed and comment the faulting instruction.
@@ -243,4 +246,3 @@ Static annotation report content:
 ## Final Response
 
 Include backend, mode, schema/source usage, report preference, and either root cause confidence for Crash analysis or behavior summary / recovered structure / uncertainty for Static annotation.
-
