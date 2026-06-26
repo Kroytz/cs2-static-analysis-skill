@@ -1,0 +1,18 @@
+# CS2 IDA Analysis Skill
+
+A reverse-engineering skill for analyzing Counter-Strike 2 / Source 2 native binaries in IDA Pro.
+
+This skill is designed for IDA-assisted analysis of CS2 modules, and related native binaries.
+
+It supports two main workflows:
+
+* **Crash analysis**: recover a specific crash path and identify the most likely root cause.
+* **Static annotation**: improve an IDA database with evidence-backed function names, variable names, comments, and type information.
+
+## Important Requirement
+
+This skill requires **[IDA Pro MCP](https://github.com/mrexodia/ida-pro-mcp)**.
+
+## License
+
+GPL-3.0
