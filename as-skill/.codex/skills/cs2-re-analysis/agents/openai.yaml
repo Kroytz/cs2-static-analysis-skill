@@ -1,0 +1,5 @@
+interface:
+  display_name: "CS2 RE Analysis"
+  short_description: "CS2 crash and static RE analysis"
+  default_prompt: "Use $cs2-re-analysis to analyze or annotate a CS2 / Source 2 binary with IDA Pro MCP or Ghidra MCP."
+

@@ -11,7 +11,7 @@ It supports two main workflows:
 
 ## Important Requirement
 
-This skill requires **[IDA Pro MCP](https://github.com/mrexodia/ida-pro-mcp)**.
+This skill requires **[IDA Pro MCP](https://github.com/mrexodia/ida-pro-mcp)** or **[Ghidra MCP](https://github.com/bethington/ghidra-mcp)**.
 
 ## License
 
