@@ -106,6 +106,16 @@ Use reference source to recognize naming conventions, interface names, virtual m
 
 Inspect only the relevant schema/source files needed for the current scope.
 
+## Tier0 / Tier1 SDK Type Recognition
+
+Before describing an unfamiliar container, allocator, string, handle, or bitset as custom, search the provided `hl2sdk-cs2` reference under `public/tier1` for a matching SDK type.
+
+When the structure resembles a tier1 base type, read `references/tier1-core-types.md` to choose likely SDK headers before inspecting the user's `hl2sdk-cs2` source.
+
+Prefer SDK-defined tier0/tier1 names over ad-hoc names when the field layout, accessors, element stride, allocation behavior, and call sites match the binary.
+
+Name a field using a specific SDK type only when the element type, stride, field layout, accessors, allocation behavior, and call-site evidence support that identification; otherwise describe it as an SDK-type-like layout and record the uncertainty.
+
 ## Shared Rules
 
 - Inspect decompiler output first when available.
